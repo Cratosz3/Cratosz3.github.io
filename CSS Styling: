@@ -7,16 +7,25 @@ body {
     height: 100vh;
     background-color: #000; /* Black background */
     color: #fff; /* White text */
-    font-family: 'Arial', sans-serif;
+    font-family: 'Arial', sans-serif; /* Default font for general text */
 }
 
 .intro-container {
     text-align: center;
+    width: 80%;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+.intro-message {
+    font-family: 'Lobster', cursive; /* Apply Lobster font */
+    font-size: 1.5rem;
+    margin-bottom: 15px;
 }
 
 .tap-to-continue {
-    margin-top: 20px;
-    padding: 10px 20px;
+    margin-top: 30px;
+    padding: 15px 30px;
     background-color: #fff;
     color: #000;
     cursor: pointer;
