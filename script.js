@@ -15,21 +15,22 @@ const countdownFunction = setInterval(function() {
 
     if (distance < 0) {
         clearInterval(countdownFunction);
-        showTapToContinue();
+        showTapToContinue(); // Show "Tap to Continue" when countdown ends
     }
 }, 1000);
 
-// Function to Show "Tap to Continue" Button and Hide Countdown
+// Show Tap to Continue Button and Replace Countdown Text
 function showTapToContinue() {
     clearInterval(countdownFunction);
     document.querySelector(".countdown-container").style.display = "none"; // Hide the countdown
-    document.getElementById("tap-to-continue-container").style.display = "block"; // Show the tap to continue button
+    document.getElementById("countdown").innerHTML = "LILOR!"; // Replace countdown with LILOR!
+    document.getElementById("tap-to-continue-container").style.display = "flex"; // Show the tap to continue button in the center
 }
 
 // Bypass Timer with "L" key (keyCode 76 for both upper and lower L)
 document.addEventListener('keydown', function(event) {
     if (event.keyCode === 76) {  // 76 is the keyCode for both 'L' and 'l'
-        showTapToContinue(); // Show the "Tap to Continue" button
+        showTapToContinue(); // Show "Tap to Continue" button
     }
 });
 
@@ -45,3 +46,4 @@ function showActivities() {
     document.getElementById("intro").style.display = "none"; // Hide the message
     document.getElementById("activities").style.display = "block"; // Show the activities
 }
+
