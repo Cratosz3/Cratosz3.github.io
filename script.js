@@ -15,38 +15,33 @@ const countdownFunction = setInterval(function() {
 
     if (distance < 0) {
         clearInterval(countdownFunction);
-        showMessage(); // Show the message and hide the timer when the countdown finishes
+        showTapToContinue();
     }
 }, 1000);
+
+// Function to Show "Tap to Continue" Button and Hide Countdown
+function showTapToContinue() {
+    clearInterval(countdownFunction);
+    document.querySelector(".countdown-container").style.display = "none"; // Hide the countdown
+    document.getElementById("tap-to-continue-container").style.display = "block"; // Show the tap to continue button
+}
 
 // Bypass Timer with "L" key (keyCode 76 for both upper and lower L)
 document.addEventListener('keydown', function(event) {
     if (event.keyCode === 76) {  // 76 is the keyCode for both 'L' and 'l'
-        showMessage(); // Show the message and hide the timer when bypassed
+        showTapToContinue(); // Show the "Tap to Continue" button
     }
 });
 
-// Function to show the message and hide the entire countdown section
+// Show Message When "Tap to Continue" Button is Pressed
 function showMessage() {
-    clearInterval(countdownFunction); // Stop the countdown
-    document.getElementById("intro").style.display = "flex"; // Show the message and keep it centered
-    document.querySelector(".countdown-container").style.display = "none"; // Hide the entire countdown container (including the heading)
+    document.getElementById("tap-to-continue-container").style.display = "none"; // Hide the "Tap to Continue" button
+    document.getElementById("intro").style.display = "flex"; // Show the message
+    document.getElementById("load-activities").style.display = "block"; // Show the button to load activities
 }
 
-// Function to handle when the "Tap to Continue" button is clicked
-function openMenu() {
-    document.getElementById('intro').style.display = 'none';
-    document.getElementById('menu').style.display = 'block';
-}
-
-function playGame() {
-    alert('Game functionality coming soon!'); // Placeholder for game function
-}
-
-function showQuiz() {
-    alert('Quiz functionality coming soon!'); // Placeholder for quiz function
-}
-
-function openPlaylist() {
-    window.location.href = "https://open.spotify.com/playlist/yourplaylistID"; // Replace with your friend's playlist URL
+// Show Activities When the "Continue to Activities" Button is Pressed
+function showActivities() {
+    document.getElementById("intro").style.display = "none"; // Hide the message
+    document.getElementById("activities").style.display = "block"; // Show the activities
 }
