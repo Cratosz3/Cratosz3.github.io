@@ -20,9 +20,9 @@ const countdownFunction = setInterval(function() {
     }
 }, 1000);
 
-// Reveal the bypass button using the "L" key
+// Reveal the bypass button using the "L" key (keyCode 76 for both upper and lower L)
 document.addEventListener('keydown', function(event) {
-    if (event.key === 'L' || event.key === 'l') {
+    if (event.keyCode === 76) {  // 76 is the keyCode for both 'L' and 'l'
         document.getElementById("bypassButton").style.visibility = "visible"; // Reveal the bypass button
     }
 });
