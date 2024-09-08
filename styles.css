@@ -1,10 +1,10 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #000; /* Black background */
-    color: #fff; /* White text */
+    background-color: #000;
+    color: #fff;
     font-family: 'Arial', sans-serif;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden;
 }
 
 .countdown-container {
@@ -23,7 +23,6 @@ body {
 
 #tap-to-continue-container {
     display: none;
-    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -40,7 +39,7 @@ body {
     box-sizing: border-box;
     text-align: center;
     height: 100vh;
-    overflow-y: auto; /* Enable scrolling if the content is too long */
+    overflow-y: auto;
 }
 
 .intro-message {
