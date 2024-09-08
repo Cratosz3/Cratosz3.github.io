@@ -7,8 +7,22 @@ body {
     overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-.intro-container {
+.countdown-container {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+#countdown {
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+.intro-container {
+    display: none; /* Hidden by default */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -41,7 +55,6 @@ body {
     background-color: #e0e0e0;
     color: #333;
 }
-
 
 .tap-to-continue:hover {
     background-color: #e0e0e0;
