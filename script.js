@@ -23,8 +23,8 @@ const countdownFunction = setInterval(function() {
 function showTapToContinue() {
     clearInterval(countdownFunction);
     document.querySelector(".countdown-container").style.display = "none"; // Hide the countdown
-    document.getElementById("countdown").innerHTML = "LILOR!"; // Replace countdown with LILOR!
-    document.getElementById("tap-to-continue-container").style.display = "flex"; // Show the tap to continue button in the center
+    document.getElementById("countdown-text").innerHTML = "LILOR!"; // Replace countdown text with LILOR!
+    document.getElementById("tap-to-continue-container").style.display = "flex"; // Show the tap to continue button
 }
 
 // Bypass Timer with "L" key (keyCode 76 for both upper and lower L)
@@ -46,4 +46,3 @@ function showActivities() {
     document.getElementById("intro").style.display = "none"; // Hide the message
     document.getElementById("activities").style.display = "block"; // Show the activities
 }
-
