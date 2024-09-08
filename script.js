@@ -20,15 +20,21 @@ const countdownFunction = setInterval(function() {
     }
 }, 1000);
 
-// Bypass Timer with "L" key
+// Reveal the bypass button using the "L" key
 document.addEventListener('keydown', function(event) {
     if (event.key === 'L' || event.key === 'l') {
-        clearInterval(countdownFunction); // Stop the countdown
-        document.getElementById("intro").style.display = "flex"; // Show the message
-        document.getElementById("countdown").style.display = "none"; // Hide the countdown
+        document.getElementById("bypassButton").style.visibility = "visible"; // Reveal the bypass button
     }
 });
 
+// Bypass Timer Function (keeps the message centered)
+function bypassTimer() {
+    clearInterval(countdownFunction); // Stop the countdown
+    document.getElementById("intro").style.display = "flex"; // Show the message and keep it centered
+    document.getElementById("countdown").style.display = "none"; // Hide the countdown
+}
+
+// Function to handle when the "Tap to Continue" button is clicked
 function openMenu() {
     document.getElementById('intro').style.display = 'none';
     document.getElementById('menu').style.display = 'block';
@@ -43,5 +49,5 @@ function showQuiz() {
 }
 
 function openPlaylist() {
-    window.location.href = "https://open.spotify.com/playlist/https://open.spotify.com/playlist/3toccWOCeopC8xY6c9bsf0?si=96ce9e3e01b6493f&pt=04201599881e48c281f1d66aa6d70c5e"; // Replace with your friend's playlist URL
+    window.location.href = "https://open.spotify.com/playlist/yourplaylistID"; // Replace with your friend's playlist URL
 }
