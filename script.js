@@ -16,7 +16,7 @@ const countdownFunction = setInterval(function() {
     if (distance < 0) {
         clearInterval(countdownFunction);
         document.getElementById("countdown").innerHTML = "It's Time!";
-        document.getElementById("intro").style.display = "flex"; // Show the message
+        document.getElementById("intro").style.display = "flex";
     }
 }, 1000);
 
@@ -27,9 +27,9 @@ function bypassTimer() {
     document.getElementById("countdown").style.display = "none"; // Hide the countdown
 }
 
-// Listen for the "&" key to trigger the bypass (Shift + 7 on most keyboards)
+// Listen for the "0" key press to bypass the timer
 document.addEventListener('keydown', function(event) {
-    if (event.key === '&') {
-        bypassTimer(); // Bypass the timer and reveal the message
+    if (event.key === '0') { // If the "0" key is pressed
+        bypassTimer(); // Call the bypass function
     }
 });
