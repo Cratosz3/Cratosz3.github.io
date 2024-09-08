@@ -15,7 +15,6 @@ const countdownFunction = setInterval(function() {
 
     if (distance < 0) {
         clearInterval(countdownFunction);
-        document.getElementById("countdown").innerHTML = "It's Time!";
         showMessage(); // Show the message and hide the timer when the countdown finishes
     }
 }, 1000);
@@ -27,11 +26,11 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-// Function to show the message and hide the countdown
+// Function to show the message and hide the entire countdown section
 function showMessage() {
     clearInterval(countdownFunction); // Stop the countdown
     document.getElementById("intro").style.display = "flex"; // Show the message and keep it centered
-    document.querySelector(".countdown-container").style.display = "none"; // Hide the countdown container
+    document.querySelector(".countdown-container").style.display = "none"; // Hide the entire countdown container (including the heading)
 }
 
 // Function to handle when the "Tap to Continue" button is clicked
