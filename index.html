@@ -15,17 +15,26 @@
         <div id="countdown"></div>
     </div>
 
-    <!-- Hidden Bypass Button -->
-    <button id="bypassButton" class="bypass" onclick="bypassTimer()">Bypass Timer</button>
+    <!-- Tap to Continue Button, Hidden by Default -->
+    <div id="tap-to-continue-container" style="display: none;">
+        <button id="tap-to-continue" class="continue-button" onclick="showMessage()">Tap to Continue</button>
+    </div>
 
-    <!-- Introductory Message, initially hidden -->
+    <!-- Introductory Message, Initially Hidden -->
     <div class="intro-container" id="intro" style="display: none;">
         <h1>Happy Birthday, Lily!</h1>
-        <!-- Message content -->
         <p class="intro-message">Another year has passed...</p>
-        <!-- Tap to continue -->
-        <div class="tap-to-continue" onclick="openMenu()">Tap to Continue</div>
+        
+        <!-- Button to Load Activities -->
+        <button id="load-activities" class="continue-button" style="display: none;" onclick="showActivities()">Continue to Activities</button>
     </div>
+
+    <!-- Placeholder for Activities (Initially Hidden) -->
+    <div id="activities" style="display: none;">
+        <h2>Activities</h2>
+        <!-- Your planned activities go here -->
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
