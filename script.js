@@ -16,20 +16,32 @@ const countdownFunction = setInterval(function() {
     if (distance < 0) {
         clearInterval(countdownFunction);
         document.getElementById("countdown").innerHTML = "It's Time!";
-        document.getElementById("intro").style.display = "flex";
+        document.getElementById("intro").style.display = "flex"; // Show the message
     }
 }, 1000);
 
-// Bypass Timer Function
-function bypassTimer() {
-    clearInterval(countdownFunction); // Stop the countdown
-    document.getElementById("intro").style.display = "flex"; // Show the message
-    document.getElementById("countdown").style.display = "none"; // Hide the countdown
-}
-
-// Listen for the "0" key press to bypass the timer
+// Bypass Timer with "L" key
 document.addEventListener('keydown', function(event) {
-    if (event.key === '0') { // If the "0" key is pressed
-        bypassTimer(); // Call the bypass function
+    if (event.key === 'L' || event.key === 'l') {
+        clearInterval(countdownFunction); // Stop the countdown
+        document.getElementById("intro").style.display = "flex"; // Show the message
+        document.getElementById("countdown").style.display = "none"; // Hide the countdown
     }
 });
+
+function openMenu() {
+    document.getElementById('intro').style.display = 'none';
+    document.getElementById('menu').style.display = 'block';
+}
+
+function playGame() {
+    alert('Game functionality coming soon!'); // Placeholder for game function
+}
+
+function showQuiz() {
+    alert('Quiz functionality coming soon!'); // Placeholder for quiz function
+}
+
+function openPlaylist() {
+    window.location.href = "https://open.spotify.com/playlist/https://open.spotify.com/playlist/3toccWOCeopC8xY6c9bsf0?si=96ce9e3e01b6493f&pt=04201599881e48c281f1d66aa6d70c5e"; // Replace with your friend's playlist URL
+}
