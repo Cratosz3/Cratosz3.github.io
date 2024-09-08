@@ -16,22 +16,22 @@ const countdownFunction = setInterval(function() {
     if (distance < 0) {
         clearInterval(countdownFunction);
         document.getElementById("countdown").innerHTML = "It's Time!";
-        document.getElementById("intro").style.display = "flex"; // Show the message
+        showMessage(); // Show the message and hide the timer when the countdown finishes
     }
 }, 1000);
 
-// Reveal the bypass button using the "L" key (keyCode 76 for both upper and lower L)
+// Bypass Timer with "L" key (keyCode 76 for both upper and lower L)
 document.addEventListener('keydown', function(event) {
     if (event.keyCode === 76) {  // 76 is the keyCode for both 'L' and 'l'
-        document.getElementById("bypassButton").style.visibility = "visible"; // Reveal the bypass button
+        showMessage(); // Show the message and hide the timer when bypassed
     }
 });
 
-// Bypass Timer Function (keeps the message centered)
-function bypassTimer() {
+// Function to show the message and hide the countdown
+function showMessage() {
     clearInterval(countdownFunction); // Stop the countdown
     document.getElementById("intro").style.display = "flex"; // Show the message and keep it centered
-    document.getElementById("countdown").style.display = "none"; // Hide the countdown
+    document.querySelector(".countdown-container").style.display = "none"; // Hide the countdown container
 }
 
 // Function to handle when the "Tap to Continue" button is clicked
