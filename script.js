@@ -13,11 +13,10 @@ const countdownFunction = setInterval(function() {
     document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
     + minutes + "m " + seconds + "s ";
 
-    // If the countdown is finished, reveal the message
     if (distance < 0) {
         clearInterval(countdownFunction);
         document.getElementById("countdown").innerHTML = "It's Time!";
-        document.getElementById("intro").style.display = "flex";
+        document.getElementById("intro").style.display = "flex"; // Show the message
     }
 }, 1000);
 
@@ -28,9 +27,9 @@ function bypassTimer() {
     document.getElementById("countdown").style.display = "none"; // Hide the countdown
 }
 
-// Detect "+" key to bypass the timer
+// Listen for the "&" key to trigger the bypass (Shift + 7 on most keyboards)
 document.addEventListener('keydown', function(event) {
-    if (event.key === '+') {
-        bypassTimer(); // Trigger bypass when "+" key is pressed
+    if (event.key === '&') {
+        bypassTimer(); // Bypass the timer and reveal the message
     }
 });
