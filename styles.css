@@ -1,10 +1,10 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #000;
-    color: #fff;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
     font-family: 'Arial', sans-serif;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .countdown-container {
@@ -25,10 +25,13 @@ body {
     display: none;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start; /* Start the content at the top */
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
     text-align: center;
+    height: 100vh; /* Ensure the full height of the screen is used */
+    overflow-y: auto; /* Enable scrolling if the content is too long */
 }
 
 .intro-message {
