@@ -1,3 +1,7 @@
+let clickCounter = 0;
+let leaderboard = [];
+const maxSessions = 10;
+
 // Countdown Timer
 const countdownDate = new Date("September 13, 2024 00:00:00").getTime();
 
@@ -10,58 +14,80 @@ const countdownFunction = setInterval(function () {
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+    document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
-    // When countdown reaches zero, show the "Tap to Continue" button
     if (distance < 0) {
         clearInterval(countdownFunction);
-        showTapToContinue(); // Show "Tap to Continue" button when countdown ends
+        showTapToContinue();
     }
 }, 1000);
 
-// Show Tap to Continue Button and Replace Countdown Text
+// Show "Tap to Continue" button when countdown ends
 function showTapToContinue() {
-    clearInterval(countdownFunction); // Stop countdown function
-    document.querySelector(".countdown-container").style.display = "none"; // Hide countdown container
-    document.getElementById("tap-to-continue-container").style.display = "flex"; // Show the "Tap to Continue" button
+    document.querySelector(".countdown-container").style.display = "none";
+    document.getElementById("tap-to-continue-container").style.display = "flex";
 }
 
-// Bypass Timer with "L" key (keyCode 76 for both upper and lower L)
+// Bypass countdown with "L" key
 document.addEventListener("keydown", function (event) {
-    if (event.keyCode === 76) { // 76 is the keyCode for both 'L' and 'l'
-        showTapToContinue(); // Trigger bypass and show "Tap to Continue" button
+    if (event.keyCode === 76) { // 76 is the keyCode for 'L'
+        showTapToContinue();
     }
 });
 
-// Show Message When "Tap to Continue" Button is Pressed
+// Show birthday message
 function showMessage() {
-    document.getElementById("tap-to-continue-container").style.display = "none"; // Hide the "Tap to Continue" button
-    document.getElementById("intro").style.display = "flex"; // Show the birthday message
+    document.getElementById("tap-to-continue-container").style.display = "none";
+    document.getElementById("intro").style.display = "flex";
 }
 
-// Show Activities Page When "Continue to Activities" Button is Pressed
+// Show activities page
 function showActivities() {
-    document.getElementById("intro").style.display = "none"; // Hide the birthday message
-    document.getElementById("activities").style.display = "block"; // Show the activities grid
+    document.getElementById("intro").style.display = "none";
+    document.getElementById("activities").style.display = "block";
 }
 
 // Navigate to individual activity pages
 function goToPage(pageId) {
-    document.getElementById("activities").style.display = "none"; // Hide the activities grid
-    document.getElementById(pageId).style.display = "block"; // Show the selected page
+    document.getElementById("activities").style.display = "none";
+    document.getElementById(pageId).style.display = "block";
 }
 
-// Go back to activities grid from individual activity pages
+// Go back to activities grid
 function goBack() {
     const pages = ["playlists", "quizzes", "quotes", "click-for-attention"];
     pages.forEach(page => document.getElementById(page).style.display = "none");
-    document.getElementById("activities").style.display = "block"; // Show the activities grid again
+    document.getElementById("activities").style.display = "block";
 }
 
-// Track clicks for the "Click for Attention" feature
-let clickCounter = 0;
-
+// Track clicks for the "Click for Attention" section and manage leaderboard
 function trackClicks() {
     clickCounter += 1;
     document.getElementById("clicks-counter").innerText = `Clicks: ${clickCounter}`;
+    updateLeaderboard();
+}
+
+// Update leaderboard functionality
+function updateLeaderboard() {
+    if (leaderboard.length >= maxSessions) {
+        leaderboard.shift(); // Remove the oldest session after reaching max sessions
+    }
+    leaderboard.push(clickCounter);
+
+    let leaderboardHTML = `<h3>Leaderboard (Top ${maxSessions} Click Sessions)</h3>`;
+    leaderboardHTML += "<ul>";
+    leaderboard.forEach((clicks, index) => {
+        leaderboardHTML += `<li>Session ${index + 1}: ${clicks} clicks</li>`;
+    });
+    leaderboardHTML += "</ul>";
+
+    document.getElementById("leaderboard").innerHTML = leaderboardHTML;
+}
+
+// Reset click counter and leaderboard after 10 sessions
+function resetLeaderboard() {
+    leaderboard = [];
+    clickCounter = 0;
+    document.getElementById("clicks-counter").innerText = "Clicks: 0";
+    document.getElementById("leaderboard").innerHTML = "<p>No sessions yet!</p>";
 }
