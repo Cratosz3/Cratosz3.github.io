@@ -84,6 +84,10 @@ h1, h2 {
     margin-top: 20px;
     cursor: pointer;
     border-radius: 5px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .attention-button {
