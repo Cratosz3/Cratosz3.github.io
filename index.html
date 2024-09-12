@@ -26,19 +26,7 @@
         <p class="intro-message">
             Another year has passed, and here we are, standing at the edge of another chapter, closer to whatever comes next. Funny how life works, right? Just a year and a half ago, I was lost, floating through the days, barely feeling anything, just existing. Then you came along, and everything shifted. You gave me a reason to wake up in the morning, a spark I didn’t know I needed. You showed me what it means to really live.
         </p>
-        <p class="intro-message">
-            Before you, life was just... there. I was breathing, but I wasn’t really alive. But you? You made me see things differently. The more time I spent with you, the more I wanted to change how you saw the world, too. I didn’t want you to feel that emptiness I knew too well. I wanted to show you that there’s more out there, that life doesn’t have to be cold and gray. I wanted to fill your life with moments that make your heart race, memories that make you smile when no one’s watching.
-        </p>
-        <p class="intro-message">
-            Life’s messy, unpredictable. It won’t always be what we want it to be. Things break. People leave. But sometimes, endings are just beginnings in disguise. You taught me that. Every conversation, every laugh, every moment with you reminded me to keep going, to push through. You have this incredible way of making everything feel like it’s going to be okay, and I want that for you too. I want you to remember this life, Lily. Not just as something you survived, but as something you lived, something you owned.
-        </p>
-        <p class="intro-message">
-            I want you to be the strongest, most unstoppable version of yourself. The girl who doesn’t back down, who knows what she wants and goes after it with everything she’s got. You have that fire in you, Lily, and it’s beautiful. So, here’s to you, sweet pea. I want you to live a life that’s yours, a life worth cherishing.
-        </p>
-        <p class="intro-message">
-            Happy Birthday. I hope it’s everything you dream of and more.
-        </p>
-        <!-- Button to Load Activities -->
+        <!-- Rest of the birthday message here -->
         <button id="load-activities" class="continue-button" onclick="showActivities()">Continue to Activities</button>
     </div>
 
@@ -49,51 +37,22 @@
             <div class="activity-item" onclick="goToPage('playlists')">Playlists</div>
             <div class="activity-item" onclick="goToPage('quizzes')">Quizzes!</div>
             <div class="activity-item" onclick="goToPage('quotes')">Quotes</div>
-            <div class="activity-item" onclick="goToPage('click-for-attention')">Click for Attention</div>
+            <div class="activity-item" onclick="loadClickForAttention()">Click for Attention</div>
         </div>
     </div>
 
-    <!-- Individual Activity Pages -->
-    <div id="playlists" class="activity-page" style="display: none;">
-        <h2>Playlist</h2>
-        <p style="text-align:center;">There's only these playlists for now, but I will be progressively adding a new one once in a while...</p>
-        <ul style="text-align:center;">
-            <li><span style="color:white; font-size: 2rem;">Lilor</span><br><a href="https://open.spotify.com/playlist/3toccWOCeopC8xY6c9bsf0?si=eaeddfe73c014f2b&pt=2d7da124f3304d3adcfb5841045239f7" style="color: white; font-size: 1.8rem;">Lilor Playlist</a></li>
-        </ul>
-        <ul style="text-align:center;">
-            <li><span style="color: oceanblue; font-size: 2rem;">Cleor</span><br><a href="https://open.spotify.com/playlist/2vzdqZQazbMuXOiXr9jHq0?si=1b3421ca1a0f49cb&pt=f56d6b2ad970ceb19341c1884417171b" style="color: oceanblue; font-size: 1.8rem;">Cleor Playlist</a></li>
-        </ul>
-        <button class="go-back-button" onclick="goBack()">Go Back</button>
-    </div>
-
-    <div id="quizzes" class="activity-page" style="display: none;">
-        <h2>Quizzes!</h2>
-        <p style="text-align:center;">I will slowly be adding more in the future!!!</p>
-        <a href="https://take.quiz-maker.com/Q80V0RU62" style="display:block; text-align:center; color: white; font-size: 1.8rem;">How well do you know me?</a>
-        <button class="go-back-button" onclick="goBack()">Go Back</button>
-    </div>
-
-    <div id="quotes" class="activity-page" style="display: none;">
-        <h2>Quotes</h2>
-        <ul style="text-align:center; font-size: 1.8rem;">
-            <li style="color:white;">“Life is hard like me”-Cleor</li>
-            <li style="color:oceanblue;">“Mine is bigger”-Lilor</li>
-            <li style="color:white;">“Don’t die without me!”-Cleor</li>
-            <li style="color:oceanblue;">“I’m eepy”-Lilor</li>
-            <li style="color:white;">“I want to make you happy”-Cleor</li>
-            <li style="color:oceanblue;">“You GYATT this!”-Lilor</li>
-        </ul>
-        <button class="go-back-button" onclick="goBack()">Go Back</button>
-    </div>
-
+    <!-- Click for Attention Section -->
     <div id="click-for-attention" class="activity-page" style="display: none;">
         <h2>Click For Attention</h2>
         <p>Click the button to get attention!</p>
         <button class="attention-button" onclick="trackClicks()">Click Me!</button>
         <p id="clicks-counter">Clicks: 0</p>
         <div id="leaderboard"></div>
-        <button class="go-back-button" onclick="goBack()">Go Back</button>
+        <p>Please text me the number that you reached at the end for a surprise.</p>
+        <button class="go-back-button" onclick="saveSession(); goBack();">Go Back</button>
     </div>
+
+    <!-- Other sections here -->
 
     <!-- Script -->
     <script src="script.js"></script>
