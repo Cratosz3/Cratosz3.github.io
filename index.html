@@ -40,13 +40,58 @@
         </p>
 
         <!-- Button to Load Activities -->
-        <button id="load-activities" class="continue-button" style="display: none;" onclick="showActivities()">Continue to Activities</button>
+        <button id="load-activities" class="continue-button" style="display: block;" onclick="showActivities()">Continue to Activities</button>
     </div>
 
-    <!-- Placeholder for Activities (Initially Hidden) -->
+    <!-- Activities Grid -->
     <div id="activities" style="display: none;">
         <h2>Activities</h2>
-        <!-- Your planned activities go here -->
+        <div class="activities-grid">
+            <div class="activity-item" onclick="goToPage('playlists')">Playlists</div>
+            <div class="activity-item" onclick="goToPage('quizzes')">Quizzes!</div>
+            <div class="activity-item" onclick="goToPage('quotes')">Quotes</div>
+            <div class="activity-item" onclick="goToPage('click-for-attention')">Click for Attention</div>
+        </div>
+    </div>
+
+    <!-- Individual Activity Pages -->
+    <div id="playlists" class="activity-page" style="display: none;">
+        <h2>Playlist</h2>
+        <p>There's only these playlists for now, but I will be progressively adding a new one once in a while...</p>
+        <ul>
+            <li><a href="https://open.spotify.com/playlist/lilor">Lilor</a> (White text)</li>
+            <li><a href="https://open.spotify.com/playlist/cleor">Cleor</a> (Navy blue text)</li>
+        </ul>
+        <button class="go-back-button" onclick="goBack()">Go Back</button>
+    </div>
+
+    <div id="quizzes" class="activity-page" style="display: none;">
+        <h2>Quizzes!</h2>
+        <p>I'll be adding more quizzes in the future too!</p>
+        <a href="https://quiz-link.example.com">How well do you know me?</a>
+        <button class="go-back-button" onclick="goBack()">Go Back</button>
+    </div>
+
+    <div id="quotes" class="activity-page" style="display: none;">
+        <h2>Quotes</h2>
+        <p>I'll slowly be adding more quotes but text me any that you desperately want me to add quickly!</p>
+        <ul>
+            <li>“Life is hard like me”-Cleor</li>
+            <li>“Mine is bigger”-Lilor</li>
+            <li>“Don’t die without me!”-Cleor</li>
+            <li>“I’m eepy”-Lilor</li>
+            <li>“I want to make you happy”-Cleor</li>
+            <li>“You GYATT this!”-Lilor</li>
+        </ul>
+        <button class="go-back-button" onclick="goBack()">Go Back</button>
+    </div>
+
+    <div id="click-for-attention" class="activity-page" style="display: none;">
+        <h2>Click For Attention</h2>
+        <p>Click the button to get attention!</p>
+        <button class="attention-button" onclick="trackClicks()">Click Me!</button>
+        <p id="clicks-counter">Clicks: 0</p>
+        <button class="go-back-button" onclick="goBack()">Go Back</button>
     </div>
 
     <script src="script.js"></script>
