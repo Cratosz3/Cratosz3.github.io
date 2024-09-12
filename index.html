@@ -58,11 +58,13 @@
     <!-- Click for Attention Section -->
     <div id="click-for-attention" class="activity-page" style="display: none;">
         <h2>Click For Attention</h2>
-        <p>Click the button to get attention!</p>
-        <button class="attention-button" onclick="trackClicks()">Click Me!</button>
-        <p id="clicks-counter">Clicks: 0</p>
-        <div id="leaderboard"></div>
-        <p>Please text me the number that you reached at the end for a surprise.</p>
+        <div class="click-for-attention-content">
+            <p>Click the button to get attention!</p>
+            <button class="attention-button" onclick="trackClicks()">Click Me!</button>
+            <p id="clicks-counter">Clicks: 0</p>
+            <div id="leaderboard"></div>
+            <p>Please text me the number that you reached at the end for a surprise.</p>
+        </div>
         <button class="go-back-button" onclick="saveSession(); goBack();">Go Back</button>
     </div>
 
@@ -90,6 +92,7 @@
     <!-- Quotes Section -->
     <div id="quotes" class="activity-page" style="display: none;">
         <h2>Quotes</h2>
+        <p style="text-align:center;">I will slowly be adding more in the future, please text me any that you remember that I should add!</p>
         <ul style="text-align:center; font-size: 1.8rem;">
             <li style="color:white;">“Life is hard like me”-Cleor</li>
             <li style="color:oceanblue;">“Mine is bigger”-Lilor</li>
