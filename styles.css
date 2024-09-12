@@ -96,7 +96,20 @@ h1, h2 {
 .attention-button {
     background-color: red;
     color: white;
-    padding: 10px 20px;
+    padding: 20px 50px;
+    font-size: 2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+}
+
+#click-for-attention .click-for-attention-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80vh;
 }
 
 #clicks-counter {
