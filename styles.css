@@ -3,13 +3,14 @@ body {
     padding: 0;
     background-color: #000;
     color: #fff;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Lobster', cursive; /* Lobster for all text */
     overflow-x: hidden;
 }
 
 h1, h2 {
-    font-family: 'Lobster', cursive; /* Apply Lobster font for titles */
+    font-family: 'Lobster', cursive;
     text-align: center;
+    font-size: 2.5rem; /* Larger font for titles */
 }
 
 .countdown-container {
@@ -22,7 +23,8 @@ h1, h2 {
 }
 
 #countdown {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    font-weight: bold; /* Bold for countdown numbers */
     margin-top: 20px;
 }
 
@@ -38,26 +40,24 @@ h1, h2 {
     display: none;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Ensure the message is centered vertically */
+    justify-content: center; /* Center the message */
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
     text-align: center;
     height: 100vh;
-    overflow-y: auto; /* Enable scrolling if the content is too long */
+    overflow-y: auto; /* Enable scrolling */
 }
 
 .intro-message {
-    font-family: 'Lobster', cursive; /* Apply Lobster font to the message */
-    font-size: 1.5rem;
-    max-width: 600px; /* Set a max width for readability */
-    margin: 20px auto; /* Center text with margin */
+    font-size: 1.8rem; /* Larger font for readability */
+    margin: 20px auto;
     line-height: 1.6;
 }
 
 .activities-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 30px;
     justify-items: center;
     align-items: center;
@@ -70,7 +70,7 @@ h1, h2 {
     cursor: pointer;
     background-color: transparent;
     color: white;
-    font-size: 1.5rem; /* Larger font for readability */
+    font-size: 1.8rem;
 }
 
 .activity-item:hover {
@@ -90,7 +90,6 @@ h1, h2 {
     background-color: red;
     color: white;
     padding: 10px 20px;
-    margin-top: 10px;
 }
 
 #clicks-counter {
