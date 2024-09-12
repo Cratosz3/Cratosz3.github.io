@@ -56,34 +56,31 @@
     <!-- Individual Activity Pages -->
     <div id="playlists" class="activity-page" style="display: none;">
         <h2>Playlist</h2>
-        <p>Lilor</p>
-        <ul>
-            <li><a href="https://open.spotify.com/playlist/3toccWOCeopC8xY6c9bsf0?si=eaeddfe73c014f2b&pt=2d7da124f3304d3adcfb5841045239f7" style="color: white;">Lilor Playlist</a></li>
+        <p style="text-align:center;">There's only these playlists for now, but I will be progressively adding a new one once in a while...</p>
+        <ul style="text-align:center;">
+            <li><span style="color:white;">Lilor</span><br><a href="https://open.spotify.com/playlist/3toccWOCeopC8xY6c9bsf0?si=eaeddfe73c014f2b&pt=2d7da124f3304d3adcfb5841045239f7" style="color: white;">Lilor Playlist</a></li>
         </ul>
-        <p>Cleor</p>
-        <ul>
-            <li><a href="https://open.spotify.com/playlist/2vzdqZQazbMuXOiXr9jHq0?si=1b3421ca1a0f49cb&pt=f56d6b2ad970ceb19341c1884417171b" style="color: navy;">Cleor Playlist</a></li>
+        <ul style="text-align:center;">
+            <li><span style="color: oceanblue;">Cleor</span><br><a href="https://open.spotify.com/playlist/2vzdqZQazbMuXOiXr9jHq0?si=1b3421ca1a0f49cb&pt=f56d6b2ad970ceb19341c1884417171b" style="color: oceanblue;">Cleor Playlist</a></li>
         </ul>
         <button class="go-back-button" onclick="goBack()">Go Back</button>
     </div>
 
     <div id="quizzes" class="activity-page" style="display: none;">
         <h2>Quizzes!</h2>
-        <p>I'll be adding more quizzes in the future too!</p>
-        <a href="https://take.quiz-maker.com/Q80V0RU62" style="color: white;">How well do you know me?</a>
+        <a href="https://take.quiz-maker.com/Q80V0RU62" style="display:block; text-align:center; color: white;">How well do you know me?</a>
         <button class="go-back-button" onclick="goBack()">Go Back</button>
     </div>
 
     <div id="quotes" class="activity-page" style="display: none;">
         <h2>Quotes</h2>
-        <p>I'll slowly be adding more quotes but text me any that you desperately want me to add quickly!</p>
-        <ul>
-            <li>“Life is hard like me”-Cleor</li>
-            <li>“Mine is bigger”-Lilor</li>
-            <li>“Don’t die without me!”-Cleor</li>
-            <li>“I’m eepy”-Lilor</li>
-            <li>“I want to make you happy”-Cleor</li>
-            <li>“You GYATT this!”-Lilor</li>
+        <ul style="text-align:center; font-size: 15px;">
+            <li style="color:white;">“Life is hard like me”-Cleor</li>
+            <li style="color:oceanblue;">“Mine is bigger”-Lilor</li>
+            <li style="color:white;">“Don’t die without me!”-Cleor</li>
+            <li style="color:oceanblue;">“I’m eepy”-Lilor</li>
+            <li style="color:white;">“I want to make you happy”-Cleor</li>
+            <li style="color:oceanblue;">“You GYATT this!”-Lilor</li>
         </ul>
         <button class="go-back-button" onclick="goBack()">Go Back</button>
     </div>
@@ -93,6 +90,7 @@
         <p>Click the button to get attention!</p>
         <button class="attention-button" onclick="trackClicks()">Click Me!</button>
         <p id="clicks-counter">Clicks: 0</p>
+        <div id="leaderboard"></div>
         <button class="go-back-button" onclick="goBack()">Go Back</button>
     </div>
 
