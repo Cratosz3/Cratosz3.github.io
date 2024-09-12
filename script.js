@@ -2,7 +2,7 @@ let clickCounter = 0;
 
 function showMessage() {
     document.getElementById('tap-to-continue-container').style.display = 'none';
-    document.getElementById('intro').style.display = 'block';
+    document.getElementById('intro').style.display = 'flex';
 }
 
 function showActivities() {
