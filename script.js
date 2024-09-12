@@ -49,6 +49,13 @@ function goToPage(pageId) {
     document.getElementById(pageId).style.display = "block";
 }
 
+// Go back to activities grid
+function goBack() {
+    const pages = ["playlists", "quizzes", "quotes", "click-for-attention"];
+    pages.forEach(page => document.getElementById(page).style.display = "none");
+    document.getElementById("activities").style.display = "block";
+}
+
 // Load "Click for Attention" and start a new session
 function loadClickForAttention() {
     clickCounter = 0;
