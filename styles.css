@@ -3,14 +3,14 @@ body {
     padding: 0;
     background-color: #000;
     color: #fff;
-    font-family: 'Lobster', cursive; /* Lobster for all text */
+    font-family: 'Lobster', cursive;
     overflow-x: hidden;
 }
 
 h1, h2 {
     font-family: 'Lobster', cursive;
     text-align: center;
-    font-size: 2.5rem; /* Larger font for titles */
+    font-size: 2.5rem;
 }
 
 .countdown-container {
@@ -24,7 +24,7 @@ h1, h2 {
 
 #countdown {
     font-size: 2.5rem;
-    font-weight: bold; /* Bold for countdown numbers */
+    font-weight: bold;
     margin-top: 20px;
 }
 
@@ -39,18 +39,21 @@ h1, h2 {
 .intro-container {
     display: none;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: center; /* Center the message */
-    width: 100%;
+    height: 100vh;
+    text-align: center;
+}
+
+.message-wrapper {
+    height: 50vh;
+    overflow-y: auto;
     padding: 20px;
     box-sizing: border-box;
-    text-align: center;
-    height: 100vh;
-    overflow-y: auto; /* Enable scrolling */
 }
 
 .intro-message {
-    font-size: 1.8rem; /* Larger font for readability */
+    font-size: 1.8rem;
     margin: 20px auto;
     line-height: 1.6;
 }
