@@ -1,9 +1,18 @@
+root {
+    --bg-color: #000;
+    --text-color: #fff;
+    --accent-color: #ff6b6b;
+}
+
 body {
     margin: 0;
     padding: 0;
     background-color: #000;
     color: #fff;
     font-family: 'Lobster', cursive;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Open Sans', sans-serif;
     overflow-x: hidden;
 }
 
@@ -11,6 +20,10 @@ h1, h2 {
     font-family: 'Lobster', cursive;
     text-align: center;
     font-size: 2.5rem;
+}
+
+.hidden {
+    display: none;
 }
 
 .countdown-container {
@@ -38,6 +51,7 @@ h1, h2 {
 
 .intro-container {
     display: none;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -91,6 +105,8 @@ h1, h2 {
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
+    display: inline-block;
+    text-align: center;
 }
 
 .attention-button {
@@ -102,6 +118,18 @@ h1, h2 {
     cursor: pointer;
     display: inline-block;
     text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    border-radius: 8px;
 }
 
 #click-for-attention .click-for-attention-content {
